@@ -9,9 +9,21 @@ export default class App extends Component {
     isLoading: false,
     searchVal: "" //the submitted search string
   }
-  onSearch = (e) => {
+  onSearchType = (e) => {
     e.preventDefault();
     console.log(e.target.value)
+    this.setState({ searchVal:e.target.value })
+  }
+  onSearchSubmit = (e) => {
+    e.preventDefault();
+    if (this.state.searchVal) {
+      this.setState({ hasLoaded: true })
+    } else {
+      window.alert('Enter some text then hit search.')
+    }
+  }
+  resetSearch = () => {
+    this.setState({ hasLoaded: false, searchVal: "" })
   }
 	render() {
 		return (
@@ -24,12 +36,14 @@ export default class App extends Component {
 				<form action="">
 					<input
 						className={"search-bar"}
-						type="text"
-						placeholder="Search for your Github superhero!"
+            type="text"
+            // value={this.state.searchVal} //TODO: reset the search bar on reset!
+            placeholder="Search for your Github superhero!"
+            onKeyUp={this.onSearchType}
 					/>
-					<input className="search-btn" type="submit" value="Search" onClick={this.onSearch} />
+					<input className="search-btn" type="submit" value="Search" onClick={this.onSearchSubmit} />
 				</form>
-        {this.state.hasLoaded ? <Result  /> : null}
+        {this.state.hasLoaded ? <Result searchVal={this.state.searchVal} resetSearch={this.resetSearch} /> : null}
 			</div>
 		);
 	}

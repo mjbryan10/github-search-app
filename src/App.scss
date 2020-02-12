@@ -1,13 +1,14 @@
 @import "./variables.scss";
 
 //MIXINS
-@mixin button-style {
+@mixin btn-style($col1) {
 	display: inline-block;
 	border: none;
 	padding: 1rem 2rem;
 	margin: 10px;
 	text-decoration: none;
-	background: $primary-color;
+  background: $col1;
+  border: 1px solid $col1;
 	color: #ffffff;
 	font-family: sans-serif;
 	font-size: 1rem;
@@ -20,11 +21,11 @@
 	&:hover,
 	&:focus {
     background: #fff;
-    color: $primary-color;
+    color: $col1;
 	}
 
 	&:focus {
-		outline: 1px dotted $primary-color;
+		outline: 1px dotted $col1;
 		outline-offset: -4px;
 	}
 
@@ -47,7 +48,7 @@ body {
 
 button, input {
   border: none;
-  border-radius: 3px;
+  border-radius: $bor-rad;
 }
 
 
@@ -92,5 +93,42 @@ form {
 .search-btn {
   padding: 10px;
   min-width: 80px;
-  @include button-style();
+  @include btn-style($primary-color);
+}
+
+.result-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 400px;
+  background-color: #fff;
+  color: #000;
+  border-radius: $bor-rad;
+  padding: 5px;
+  .result-reset {
+    @include btn-style(red);
+    height: 25px;
+    width: 25px;
+    padding:0;
+    float: right;
+  }
+  img {
+    display: block;
+    padding: 3px;
+    width: 123px;
+    height: 123px;
+    background-color: $bg-color;
+    background-image: url('./resources/images/GitHub-Mark-Light-120px-plus.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: $bor-rad;
+  }
+  .result-header {
+    display: flex;
+    .result-bio {
+      display: block;
+      padding: 0 5px;
+    }
+
+  }
 }
