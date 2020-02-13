@@ -95,7 +95,13 @@ form {
   min-width: 80px;
   @include btn-style($primary-color);
 }
-
+.results-container {
+  // flex: 0 0 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
 .result-container {
   position: relative;
   width: 100%;
@@ -114,9 +120,9 @@ form {
   }
   img {
     display: block;
-    padding: 3px;
-    width: 123px;
-    height: 123px;
+    // padding: 3px;
+    width: 120px;
+    height: 120px;
     background-color: $bg-color;
     background-image: url('./resources/images/GitHub-Mark-Light-120px-plus.png');
     background-repeat: no-repeat;
@@ -130,5 +136,28 @@ form {
       padding: 0 5px;
     }
 
+  }
+}
+
+.repos-container {
+  a {
+    text-decoration: none;
+  }
+  .repo {
+    background-color: $bg-color-light;
+    border-radius: $bor-rad;
+    margin-top: 10px;
+    display: flex;
+    .repo > * {
+      flex: 1 0 auto;
+    }
+    .stats-container {
+      // flex: 0 0 80px;
+      display: flex;
+      justify-content: space-between;
+      p {
+        margin: 0 .3rem;
+      }
+    }
   }
 }
