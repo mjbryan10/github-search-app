@@ -3,6 +3,8 @@ import "./App.scss";
 
 import Results from "./components/Results";
 
+import ScrollUp from './components/scroll/ScrollUp';
+
 export default class App extends Component {
 	state = {
 		hasLoaded: false,
@@ -61,9 +63,10 @@ export default class App extends Component {
 						onClick={this.onSearchSubmit}
 					/>
 				</form>
-				{this.state.hasLoaded ? (
+				{(this.state.hasLoaded && this.state.userData.items.length) ? (
 					<Results userData={this.state.userData} resetSearch={this.resetSearch} />
 				) : null}
+				<ScrollUp />
         {/* <footer><p>Created by Matthew James Bryan</p></footer> */}
 			</div>
 		);

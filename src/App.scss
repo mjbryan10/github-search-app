@@ -113,7 +113,7 @@ form {
 	position: relative;
 	width: 100%;
 	max-width: 1200px;
-	min-height: 400px;
+	min-height: 110px;
 	background-color: #fff;
 	color: #000;
 	border-radius: $bor-rad;
@@ -131,11 +131,13 @@ form {
 		// padding: 3px;
 		width: 120px;
 		height: 120px;
-		background-color: $bg-color;
-		background-image: url("./resources/images/GitHub-Mark-Light-120px-plus.png");
-		background-repeat: no-repeat;
-		background-position: center;
 		border-radius: $bor-rad;
+		&.default-bg {
+			background-color: $bg-color;
+			background-image: url("./resources/images/GitHub-Mark-Light-120px-plus.png");
+			background-repeat: no-repeat;
+			background-position: center;
+		}
 	}
 	.result-header {
 		display: flex;

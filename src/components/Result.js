@@ -39,7 +39,7 @@ export default class Result extends Component {
 					onClick={this.props.resetSearch}
 				/>
 				<div className="result-header">
-					<img src={userData.avatar_url} alt="" height="" />
+					<img src={userData.avatar_url} alt="User Logo" className={(userData.avatar_url ? "" : "default-bg")} />
 					<div className="result-bio">
 						<h3>{userName}</h3>
 						<p>Followers: {this.state.followers.length}</p>
