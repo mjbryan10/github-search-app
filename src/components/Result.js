@@ -42,7 +42,8 @@ export default class Result extends Component {
 					<img src={userData.avatar_url} alt="" height="" />
 					<div className="result-bio">
 						<h3>{userName}</h3>
-						<p>Followers: {this.state.followers.length} </p>
+						<p>Followers: {this.state.followers.length}</p>
+						<p>Repositories: {this.state.repos.length}</p>
 					</div>
 				</div>
 				<Repos repos={this.state.repos} />

@@ -64,6 +64,7 @@ export default class App extends Component {
 				{this.state.hasLoaded ? (
 					<Results userData={this.state.userData} resetSearch={this.resetSearch} />
 				) : null}
+        {/* <footer><p>Created by Matthew James Bryan</p></footer> */}
 			</div>
 		);
 	}
