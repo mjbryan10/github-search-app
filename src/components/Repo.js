@@ -18,13 +18,7 @@ export default class Repo extends Component {
 	// 		.then(data => this.setState({ [prop]: data }));
 	// };
 	convertISO = iso => {
-		//https://stackoverflow.com/questions/3552461/how-to-format-a-javascript-date
 		let date = new Date(iso);
-		// let options = {
-		//     day: '2-digit',
-		//     month: 'narrow',
-
-		// }
 		return date.toDateString();
 	};
 	// componentDidMount() {

@@ -8,14 +8,6 @@ export default class Result extends Component {
 		followers: {},
 		repos: {},
 	};
-	// fetchData = async (url) => {
-
-	// 	let responseData = {};
-	// 	responseData = await fetch(url)
-	// 		.then(response => response.json())
-	// 		.then(data => responseData = data);
-	// 	return responseData;
-	// };
 	updateState = async (prop, url) => {
 		await fetch(url)
 			.then(response => response.json())
@@ -23,7 +15,6 @@ export default class Result extends Component {
 	};
 	componentDidMount() {
 		let userData = this.props.userData;
-		// this.setState({followers: this.fetchData(userData.followers_url).length})
 		this.updateState('followers', userData.followers_url);
 		this.updateState('repos', userData.repos_url);
 	}

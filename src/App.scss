@@ -5,8 +5,8 @@
 	transition: $speed ease-in-out;
 }
 @mixin collapse-transition($speed: 250ms) {
-  transition: opacity $speed ease-in-out;
-  transform:  font-size $speed/2 ease-in-out;
+	transition: opacity $speed ease-in-out;
+	transform: font-size $speed/2 ease-in-out;
 }
 @mixin btn-style($col1) {
 	display: inline-block;
@@ -24,18 +24,15 @@
 	transition: background 250ms ease-in-out, transform 150ms ease;
 	-webkit-appearance: none;
 	-moz-appearance: none;
-
 	&:hover,
 	&:focus {
 		background: #fff;
 		color: $col1;
 	}
-
 	&:focus {
 		outline: 1px dotted $col1;
 		outline-offset: -4px;
 	}
-
 	&:active {
 		transform: scale(0.99);
 	}
@@ -59,13 +56,21 @@ input {
 	border-radius: $bor-rad;
 }
 
-//
+//APP.js
 .App {
 	display: flex;
 	flex-flow: column nowrap;
 	max-width: 90vw;
+	min-height: 95vh;
 	align-items: center;
+	justify-content: space-between;
 	margin: 0 auto;
+	.content-container {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		width: 100%;
+	}
 	header {
 		margin-top: 28px;
 		h1 {
@@ -102,8 +107,24 @@ form {
 	min-width: 80px;
 	@include btn-style($primary-color);
 }
+footer { 
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	margin-top: 20px;
+	a {
+		color: $primary-color;
+		text-decoration: none;
+		&:visited {
+			color: $primary-color;
+		}
+		&:hover, &:focus, &:active {
+			text-decoration: underline;
+		}
+	}
+}
+//RESULT(S)
 .results-container {
-	// flex: 0 0 100%;
 	width: 100%;
 	display: flex;
 	flex-flow: column nowrap;
@@ -128,7 +149,6 @@ form {
 	}
 	img {
 		display: block;
-		// padding: 3px;
 		width: 120px;
 		height: 120px;
 		border-radius: $bor-rad;
@@ -147,13 +167,13 @@ form {
 		}
 	}
 }
-
+//REPO(S)
 .repos-container {
 	a {
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 	.repo {
 		background-color: $bg-color-light;
@@ -170,7 +190,6 @@ form {
 			display: flex;
 			justify-content: space-between;
 			.stats-container {
-				// flex: 0 0 80px;
 				display: flex;
 				justify-content: space-between;
 				p {
@@ -179,17 +198,15 @@ form {
 			}
 		}
 		.repo-info {
-			// @include collapse-transition();
 			@include standard-transition();
-			// transition: 3s ease-in-out;
 			font-size: auto;
 			&.hidden {
-			  font-size: 0;
+				font-size: 0;
 				opacity: 0;
-      }
-      p span {
-        font-weight: 500;
-      }
+			}
+			p span {
+				font-weight: 500;
+			}
 		}
 	}
 }
