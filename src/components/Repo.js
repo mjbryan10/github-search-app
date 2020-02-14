@@ -5,69 +5,64 @@ export default class Repo extends Component {
 		hasLoaded: false,
 		isLoading: false,
 		showInfo: false,
-		// commits: {},
 	};
 	toggleInfo = () => {
 		this.state.showInfo
 			? this.setState({ showInfo: false })
 			: this.setState({ showInfo: true });
 	};
-	// updateState = async (prop, url) => {
-	// 	await fetch(url)
-	// 		.then(response => response.json())
-	// 		.then(data => this.setState({ [prop]: data }));
-	// };
 	convertISO = iso => {
 		let date = new Date(iso);
 		return date.toDateString();
 	};
-	// componentDidMount() {
-	// 	this.updateState("commits", this.props.repo.commits_url);
-	// }
 	render() {
-		let repo = this.props.repo;
+		let {
+			id,
+			html_url,
+			name,
+			forks_count,
+			stargazers_count,
+			watchers_count,
+			description,
+			open_issues_count,
+			updated_at,
+		} = this.props.repo;
 		return (
-			<div className="repo" key={repo.id} onClick={this.toggleInfo}>
+			<div className="repo" key={id} onClick={this.toggleInfo}>
 				<div className="repo-header">
-					<a href={repo.html_url}>{repo.name}</a>
+					<a href={html_url}>{name}</a>
 					<div className="stats-container">
 						<p>
-							<i class="fas fa-code-branch"></i>: {repo.forks_count}
+							<i className="fas fa-code-branch"></i>: {forks_count}
 						</p>
 						<p>
-							<i class="fas fa-star"></i>: {repo.stargazers_count}
+							<i className="fas fa-star"></i>: {stargazers_count}
 						</p>
 						<p>
-							<i class="fas fa-eye"></i>: {repo.watchers_count}
+							<i className="fas fa-eye"></i>: {watchers_count}
 						</p>
 					</div>
 				</div>
 				<div className={"repo-info " + (!this.state.showInfo ? "hidden" : "")}>
 					<ul>
-						{repo.description ? (
+						{description ? (
 							<li>
 								<p>
 									<span>Description: </span>
-									{repo.description}
+									{description}
 								</p>
 							</li>
 						) : null}
 						<li>
 							<p>
 								<span>Issues: </span>
-								{repo.open_issues_count}
+								{open_issues_count}
 							</p>
 						</li>
-						{/* <li>
-							<p>
-								<span>Commits: </span>
-								{this.state.commits.length}
-							</p>
-						</li> */}
 						<li>
 							<p>
 								<span>Last updated: </span>
-								{this.convertISO(repo.updated_at)}
+								{this.convertISO(updated_at)}
 							</p>
 						</li>
 					</ul>

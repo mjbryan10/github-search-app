@@ -13,7 +13,7 @@ export default function Repos(props) {
 	return (
 		<div className="repos-container">
 			{repoIterator().map(repo => (
-				<Repo repo={repo} />
+				<Repo key={repo.id} repo={repo} />
 			))}
 		</div>
 	);

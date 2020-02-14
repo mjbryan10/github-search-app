@@ -16,7 +16,7 @@ export default class Results extends Component {
 		return (
 			<div className="results-container">
 				{this.renderAmount(1).map(user => (
-					<Result userData={user} resetSearch={this.props.resetSearch} />
+					<Result userData={user} key={user.id} resetSearch={this.props.resetSearch} />
 				))}
 			</div>
 		);

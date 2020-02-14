@@ -14,30 +14,31 @@ export default class Result extends Component {
 			.then(data => this.setState({ [prop]: data }));
 	};
 	componentDidMount() {
-		let userData = this.props.userData;
+		let { userData } = this.props;
 		this.updateState('followers', userData.followers_url);
 		this.updateState('repos', userData.repos_url);
 	}
 	render() {
-		let userData = this.props.userData;
-		let userName = userData.login;
+		let { userData, resetSearch } = this.props;
+		let { followers, repos } = this.state;
+		let { login, avatar_url } = userData;
 		return (
 			<div className="result-container" key={userData.id}>
 				<input
 					className="result-reset"
 					type="button"
 					value="X"
-					onClick={this.props.resetSearch}
+					onClick={resetSearch}
 				/>
 				<div className="result-header">
-					<img src={userData.avatar_url} alt="User Logo" className={(userData.avatar_url ? "" : "default-bg")} />
+					<img src={avatar_url} alt="User Logo" className={(avatar_url ? "" : "default-bg")} />
 					<div className="result-bio">
-						<h3>{userName}</h3>
-						<p>Followers: {this.state.followers.length}</p>
-						<p>Repositories: {this.state.repos.length}</p>
+						<h3>{login}</h3>
+						<p>Followers: {followers.length}</p>
+						<p>Repositories: {repos.length}</p>
 					</div>
 				</div>
-				<Repos repos={this.state.repos} />
+				<Repos repos={repos} />
 			</div>
 		);
 	}
