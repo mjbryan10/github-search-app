@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/gh-search-app/static/css/main.4377e4f3.chunk.css",
-    "main.js": "/gh-search-app/static/js/main.8b4f19b9.chunk.js",
-    "main.js.map": "/gh-search-app/static/js/main.8b4f19b9.chunk.js.map",
-    "runtime-main.js": "/gh-search-app/static/js/runtime-main.97b9f876.js",
-    "runtime-main.js.map": "/gh-search-app/static/js/runtime-main.97b9f876.js.map",
-    "static/js/2.152ae64b.chunk.js": "/gh-search-app/static/js/2.152ae64b.chunk.js",
-    "static/js/2.152ae64b.chunk.js.map": "/gh-search-app/static/js/2.152ae64b.chunk.js.map",
-    "index.html": "/gh-search-app/index.html",
-    "precache-manifest.cd613cfc37a6d57466290e858677b1c3.js": "/gh-search-app/precache-manifest.cd613cfc37a6d57466290e858677b1c3.js",
-    "service-worker.js": "/gh-search-app/service-worker.js",
-    "static/css/main.4377e4f3.chunk.css.map": "/gh-search-app/static/css/main.4377e4f3.chunk.css.map",
-    "static/js/2.152ae64b.chunk.js.LICENSE.txt": "/gh-search-app/static/js/2.152ae64b.chunk.js.LICENSE.txt"
+    "main.css": "/github-search-app/static/css/main.4377e4f3.chunk.css",
+    "main.js": "/github-search-app/static/js/main.1be9a38a.chunk.js",
+    "main.js.map": "/github-search-app/static/js/main.1be9a38a.chunk.js.map",
+    "runtime-main.js": "/github-search-app/static/js/runtime-main.aa851898.js",
+    "runtime-main.js.map": "/github-search-app/static/js/runtime-main.aa851898.js.map",
+    "static/js/2.152ae64b.chunk.js": "/github-search-app/static/js/2.152ae64b.chunk.js",
+    "static/js/2.152ae64b.chunk.js.map": "/github-search-app/static/js/2.152ae64b.chunk.js.map",
+    "index.html": "/github-search-app/index.html",
+    "precache-manifest.9e47716fa887e0e2ad884d10304f8740.js": "/github-search-app/precache-manifest.9e47716fa887e0e2ad884d10304f8740.js",
+    "service-worker.js": "/github-search-app/service-worker.js",
+    "static/css/main.4377e4f3.chunk.css.map": "/github-search-app/static/css/main.4377e4f3.chunk.css.map",
+    "static/js/2.152ae64b.chunk.js.LICENSE.txt": "/github-search-app/static/js/2.152ae64b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.97b9f876.js",
+    "static/js/runtime-main.aa851898.js",
     "static/js/2.152ae64b.chunk.js",
     "static/css/main.4377e4f3.chunk.css",
-    "static/js/main.8b4f19b9.chunk.js"
+    "static/js/main.1be9a38a.chunk.js"
   ]
 }
